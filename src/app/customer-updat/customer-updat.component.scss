@@ -1,0 +1,182 @@
+form{
+  height: auto;
+  // box-shadow:   0 0 12px 0px #a5a5a5;
+  overflow: visible;
+  background: #0507317a;
+  backdrop-filter: blur(20px);
+}
+.form-box h1 {
+  font-size: 30px;
+}
+.form-box::before {
+  width: 76PX !important;
+  height: 69px !important;
+  border-bottom-right-radius:10px;
+  transform: rotate(8deg);
+  top: -9px;
+  left: -2px;
+
+}
+.form-box::after {
+  bottom: 26px;
+  right: -10px;
+  z-index: 4;
+  height: 2px;
+  transform: rotate(322deg);
+  width: 89px;
+}
+.close-btn{
+top: 22px;
+left: 29px;
+}
+.close-btn:hover{
+top: 30px;
+  left: 37px;
+}
+.role{
+  margin-bottom: 20px;
+}
+
+textarea{
+  background: transparent;
+  height: 70px;
+  border:none;
+}
+
+textarea{
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid  #3d537b ;
+  position : relative;
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  background-color: transparent;
+  color: #439bde;
+  font-weight: 600;
+  font-size: 18px;
+  box-shadow: inset 0px 0px 20px #3d537b5a ;
+}
+textarea.form-control:focus{
+  background: transparent !important;
+  box-shadow: none !important;
+}
+textarea.form-control{
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #439bde;
+}
+textarea::-webkit-scrollbar-track{
+  background: red;
+}
+textarea::-webkit-scrollbar-corner{
+  background: red;
+}
+textarea::-webkit-scrollbar-thumb{
+  background: red;
+}
+.inputNotes{
+  position : relative;
+  width: 100%;
+  height: 50px;
+}
+.inputNotes label{
+  position : absolute;
+  top:95% ;
+  left:5px;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #8193b2;
+  font-weight: 500;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.inputNotes textarea:focus~label{
+  top:1px !important;
+  font-size:16px;
+}
+.top{
+  top: 1px !important;
+  font-size:16px !important
+}
+
+.inputNotes input{
+  width: 100px;
+  height: 100%;
+  color: #fff;
+  background-color: transparent;
+  color:#439bde;
+  font-weight: 600;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+.inputNotes .icon{
+  position: absolute;
+   right: 8px;
+  color: #0b8df0;
+  line-height: 50px;
+  font-size: 20px;
+  top: 25px;
+}
+.inputNotes .iconpass{
+  font-size: 25px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+input[type=number],
+input[type=number]:hover{
+  margin: 0;
+  -webkit-appearance: none !important;
+  -moz-appearance: textfield;
+   appearance: none;
+}
+.close-btn{
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+  color:#040d21;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.close-btn:hover{
+  border-radius: 50%;
+  border-radius: 50%;
+  color: #125d96;
+  background: #050824;
+  color: #125ff2;
+  width: 35px;
+  height: 35px;
+
+}
+
+.inputNotes input:-webkit-autofill,
+.inputNotes input:-webkit-autofill:hover,
+.inputNotes input:-webkit-autofill:focus,
+.inputNotes input:-webkit-autofill:active{
+  background:transparent !important;
+  -webkit-text-fill-color: none !important;
+}
+.inputNotes input:-webkit-autofill {
+  background-color: transparent !important;
+}
+input:focus{
+  background-color: transparent;
+  border: none !important;
+  outline-color:transparent;
+  box-shadow: none !important;
+  color: #0b8df0;
+}
+.custom-select::after {
+  bottom: 4px;
+}
+.form-control.is-valid{
+  // border:none
+}

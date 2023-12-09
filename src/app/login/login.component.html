@@ -1,0 +1,49 @@
+
+<div class="alert m-auto alert-danger " [class.animi]="invalidLogin" *ngIf="invalidLogin">
+  <p>{{errorMessage}}</p>
+</div>
+<!-- ---------------------------------------------------------------------------- -->
+<form class="form-box" [class.show-form]="fShow"[class.Close-form]="fClose" [formGroup]='loginForm' (ngSubmit)="loginFormFun()">
+  <span class="close-btn">
+    <i class="fa fa-close" (click)="formClose()"></i>
+  </span>
+  <h1>Login</h1>
+  <!-- --------------------email------------------------- -->
+  <div class=" input email">
+    <span class="icon">
+      <i *ngIf="loginForm.get('email')?.errors!=null"  class="fa  fa-envelope"></i>
+    </span>
+    <input #email
+    [class.is-valid]="loginForm.get('email')?.errors ==null && loginForm.get('email')?.touched"
+    type="email" formControlName="email" class="w-100 inputemail form-control">
+      <label for="" [ngClass]="{'top':loginForm.get('email').errors ==null||email.value.length>0}">Email</label>
+    <small class="text-danger" *ngIf="loginForm.get('email')?.errors!=null &&loginForm.get('email')?.touched">
+      <span *ngIf="loginForm.get('email')?.errors.required">
+         Email is Required</span>
+      <span *ngIf="loginForm.get('email')?.errors.email">
+        error enter valid email</span>
+    </small>
+  </div>
+  <!-- ------------------password------------------------ -->
+  <div class=" input password">
+    <span *ngIf="password.value.length==0" class="icon iconpass"><i class="fa fa-lock"></i></span>
+    <input #password
+    [class.is-valid]="loginForm.get('password')?.errors ==null&&loginForm.get('password')?.touched"
+    [type]="!showPass ? 'password' : 'text'" formControlName="password" class="w-100">
+    <label for=""[ngClass]="{'top':loginForm.get('password').errors ==null||password.value.length>0}">password</label>
+    <small class="text-danger"*ngIf="loginForm.get('password')?.errors!=null &&loginForm.get('password')?.touched">
+      <span *ngIf="loginForm.get('password')?.errors.required " >
+         password is Required</span>
+      <span *ngIf="loginForm.get('password')?.errors.pattern">
+        error enter valid password[ first litter capital]</span>
+    </small>
+    <div class="eye-icon" *ngIf="password.value.length>0">
+      <i class="fa fa-eye" *ngIf="showPass" (click)=" showPassword(password)"></i>
+      <i class="fa fa-eye-slash" *ngIf="!showPass"  (click)=" showPassword(password)"></i>
+    </div>
+  </div>
+  <button [disabled]="loginForm.invalid" type="submit" class=" f-btn"> Login</button>
+  <p class="text-center footer"> Create New Account <a class="golink" (click)="goRegistration()" >SignUp</a> </p>
+</form>
+<!-- ----------------------------------------------------------------------------- -->
+

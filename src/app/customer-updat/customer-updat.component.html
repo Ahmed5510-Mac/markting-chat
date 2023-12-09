@@ -1,0 +1,84 @@
+
+<!-- <div class="alert m-auto alert-danger" [class.animi]="invalidRegistration" *ngIf="invalidupdate">
+  <p>{{'errorMessage'}}</p>
+</div> -->
+<div class=" update"></div>
+<!-- ------------------------------ -->
+  <form class=" form-box" [class.show-form]="showCustomerUpdate"[class.Close-form]="!showCustomerUpdate"
+  [formGroup]='updateForm' (ngSubmit)="updateUser()" >
+    <span class="close-btn" (click)="formClose()">
+      <i class="fa fa-close"></i>
+    </span>
+    <h1> Customer Update</h1>
+    <!-- ------------------full-name---------------------- -->
+    <div class="input fullName">
+      <span class="icon">
+        <i *ngIf="updateForm.get('fullName')?.errors!=null" class="fa fa-user"></i>
+      </span>
+      <input #fullName
+       [class.is-valid]="updateForm.get('fullName')?.errors ==null"
+      type="text" formControlName="fullName" class="w-100 form-control">
+      <label  [ngClass]="{'top':updateForm.get('fullName')?.errors==null||fullName.value.length>0}">Full Name</label>
+      <small class="text-danger" *ngIf="updateForm.get('fullName')?.errors!=null &&updateForm.get('fullName')?.touched">
+       <span *ngIf="updateForm.get('fullName')?.errors.required">First Name is Required</span>
+       <span  *ngIf="updateForm.get('fullName')?.errors.pattern"> Enter Valid First Name</span>
+      </small>
+    </div>
+    <!-- ------------------phone number---------------------- -->
+    <div class="input phone">
+      <span class="icon">
+        <i *ngIf="updateForm.get('phone')?.errors!=null" class="fa  fa-phone"></i>
+      </span>
+      <input #phone autocomplete="false" required
+      [class.is-valid]="updateForm.get('phone')?.errors==null"
+      type="phone" formControlName="phone" class="w-100 form-control">
+      <label for="" [ngClass]="{'top':updateForm.get('phone')?.errors==null||phone.value.length>0}">Phone</label>
+      <small class="text-danger" *ngIf="updateForm.get('phone')?.errors!=null&&updateForm.get('phone')?.touched">
+        <span *ngIf="updateForm.get('phone')?.errors.required"> Phone  is     Required</span>
+        <span  *ngIf="updateForm.get('phone')?.errors.pattern"> Enter  Valid  Phone</span>
+       </small>
+    </div>
+    <!-- ------------------Note ---------------------- -->
+    <div class="inputNotes Notes">
+      <span class="icon">
+        <i *ngIf="!(notes.value.length>0)" class="fa fa-envelope"></i>
+      </span>
+      <textarea #notes (blur)="logvalue()"
+      class="w-100 form-control" formControlName="Notes"
+      [class.is-valid]="updateForm.get('Notes')?.errors==null&&notes.value.length>0"
+      ></textarea>
+      <label [class.top]="notes.value.length>0">Notes</label>
+      <small class="text-danger" *ngIf="updateForm.get('Notes')?.errors!==null &&updateForm.get('Notes')?.touched">
+        <span *ngIf="updateForm.get('Notes')?.errors.required"> Notes  is     Required</span>
+        <span  *ngIf="updateForm.get('Notes')?.errors.pattern"> Enter  Valid  Notes</span>
+       </small>
+    </div>
+    <!-- ------------------gender---------------------- -->
+  <div class="gender">
+    <span class="lable">Gender</span>
+    <input id="male" type="radio"   formControlName="gender" value="male">
+    <input id="female" type="radio" formControlName="gender"  value="female">
+    <span class="bull"></span>
+    <label for="male"><img src="../../assets/images/male.webp" alt=""></label>
+    <label for="female"><img src="../../assets/images/Femalwebp.webp" alt=""> </label>
+  </div>
+    <!-- ------------------category---------------------- -->
+    <label for="" class="custom-select mt-5">
+       Select Role
+      <select class="category"  id="category" formControlName="category" required >
+        <option  *ngFor="let cat of categoryList" [id]="cat.name" [value]="cat.code">
+           {{cat.code}}
+        </option>
+      </select>
+    </label>
+    <!-- ------------------ buttons ---------------------- -->
+    <div class="buttons mt-4 d-flex justify-content-center gap-5">
+      <button [disabled]="updateForm.invalid" type="submit" class="f-btn">Update</button>
+      <button [disabled]="!updateForm.get('phone')?.touched
+       &&!updateForm.get('fullName')?.touched
+       &&!updateForm.get('Note')?.touched
+      "type="reset" class="f-btn"> Reset</button>
+    </div>
+
+  </form>
+

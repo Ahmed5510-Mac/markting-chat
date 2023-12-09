@@ -1,0 +1,4 @@
+<div>
+  <img  *ngIf="!recording" src="../../assets/images/mic.png" alt=""(click)="startRecording()">
+  <img  *ngIf="recording"src="../../assets/images/pause.png" alt=""(click)="stopRecording()">
+</div>

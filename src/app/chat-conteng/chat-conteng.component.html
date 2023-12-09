@@ -1,0 +1,59 @@
+<div class="container">
+  <!-- ------------header------------------- -->
+  <div class="header">
+    <div class="header-content">
+      <div class="acount-info">
+        <div class="chat-user-avatar">
+          <img [src]="imgavtar" alt="">
+        </div>
+        <div class="chat-user-name">
+          ahmed
+        </div>
+      </div>
+      <!--header action  -->
+      <div class="header-acount-action">
+        <a routerLink="/whatsappChat"><svg  width="30px" height="30px"  stroke="#8696a0" stroke-width="0.00024000000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(12,12), scale(0)"><rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="14.4" fill="#7ed0ec" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.72"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M15 10.5C15 12.9853 12.9853 15 10.5 15C8.01472 15 6 12.9853 6 10.5C6 8.01472 8.01472 6 10.5 6C12.9853 6 15 8.01472 15 10.5ZM14.1793 15.2399C13.1632 16.0297 11.8865 16.5 10.5 16.5C7.18629 16.5 4.5 13.8137 4.5 10.5C4.5 7.18629 7.18629 4.5 10.5 4.5C13.8137 4.5 16.5 7.18629 16.5 10.5C16.5 11.8865 16.0297 13.1632 15.2399 14.1792L20.0304 18.9697L18.9697 20.0303L14.1793 15.2399Z" fill="#8696a0"></path> </g></svg></a>
+        <a routerLink="/whatsappChat"><svg width="30px" height="30px" viewBox="-2.4 -2.4 28.80 28.80" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, -1, 0, 0)rotate(90)"><g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(12,12), scale(0)"><rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="14.4" fill="#7ed0ec" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.288"> <path d="M7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10C6.10457 10 7 10.8954 7 12Z" fill="#aebac1"></path> <path d="M14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12Z" fill="#aebac1"></path> <path d="M21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10C20.1046 10 21 10.8954 21 12Z" fill="#aebac1"></path> </g><g id="SVGRepo_iconCarrier"> <path d="M7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10C6.10457 10 7 10.8954 7 12Z" fill="#aebac1"></path> <path d="M14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12Z" fill="#aebac1"></path> <path d="M21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10C20.1046 10 21 10.8954 21 12Z" fill="#aebac1"></path> </g></svg></a>
+      </div>
+    </div>
+  </div>
+  <!-- ------------body------------------- -->
+  <div class="body">
+    <div class="back"></div>
+    <div class="messages" #scrollableDiv >
+      <div class="message" [ngClass]="{me:message.my}" *ngFor="let message of users.messages">
+        <div class="message-content">
+          {{message?.body}}
+          <div class="d-flex align-items-center time">
+            <div class="time">
+                {{message.time}}</div>
+                <span *ngIf=":message.my">
+                  <svg *ngIf="!users.leatsMessageRead" width="20" height="20" fill="none"  id="doublecheck"><path fill="#8696a0" fill-rule="evenodd" d="M16.5303 6.46967C16.8232 6.76256 16.8232 7.23744 16.5303 7.53033L6.53033 17.5303C6.38968 17.671 6.19891 17.75 6 17.75 5.80109 17.75 5.61032 17.671 5.46967 17.5303L1.46967 13.5303C1.17678 13.2374 1.17678 12.7626 1.46967 12.4697 1.76256 12.1768 2.23744 12.1768 2.53033 12.4697L6 15.9393 15.4697 6.46967C15.7626 6.17678 16.2374 6.17678 16.5303 6.46967zM22.5303 6.46966C22.8232 6.76254 22.8232 7.23742 22.5303 7.53032L12.5308 17.5303C12.2379 17.8232 11.7631 17.8232 11.4702 17.5304L9.96975 16.0304C9.67681 15.7376 9.67674 15.2627 9.96959 14.9697 10.2624 14.6768 10.7373 14.6767 11.0303 14.9696L12.0004 15.9394 21.4697 6.46968C21.7625 6.17678 22.2374 6.17677 22.5303 6.46966z" clip-rule="evenodd" class="color5e94ff svgShape"></path></svg>
+                  <svg *ngIf="users.leatsMessageRead" width="20" height="20" fill="none"  id="doublecheck"><path fill="#2196f3" fill-rule="evenodd" d="M16.5303 6.46967C16.8232 6.76256 16.8232 7.23744 16.5303 7.53033L6.53033 17.5303C6.38968 17.671 6.19891 17.75 6 17.75 5.80109 17.75 5.61032 17.671 5.46967 17.5303L1.46967 13.5303C1.17678 13.2374 1.17678 12.7626 1.46967 12.4697 1.76256 12.1768 2.23744 12.1768 2.53033 12.4697L6 15.9393 15.4697 6.46967C15.7626 6.17678 16.2374 6.17678 16.5303 6.46967zM22.5303 6.46966C22.8232 6.76254 22.8232 7.23742 22.5303 7.53032L12.5308 17.5303C12.2379 17.8232 11.7631 17.8232 11.4702 17.5304L9.96975 16.0304C9.67681 15.7376 9.67674 15.2627 9.96959 14.9697 10.2624 14.6768 10.7373 14.6767 11.0303 14.9696L12.0004 15.9394 21.4697 6.46968C21.7625 6.17678 22.2374 6.17677 22.5303 6.46966z" clip-rule="evenodd" class="color5e94ff svgShape"></path></svg>
+                </span>
+              </div>
+
+        </div>
+    </div>
+
+    </div>
+  </div>
+  <!-- ------------footer------------------- -->
+  <div class="footer">
+    <div class="imojey">
+      <emoji-mart (emojiClick)="addemoji($event)" *ngIf="emojivisable" title="Pick your emoji…" emoji="point_up"></emoji-mart>
+      <img (click)="swithImoje()" src="../../assets/images/smil.png" alt="">
+    <label for="fileup">
+      <img  src="../../assets/images/plus.png" alt="">
+    </label>
+    <input id="fileup" type="file" class="file">
+    </div>
+    <div class="text-message">
+      <textarea [(ngModel)]="message" placeholder="Type message"#textMessage (keydown.enter)="sendMessage($event)"></textarea>
+    </div>
+    <div class="mic">
+      <app-audio-recording></app-audio-recording>
+    </div>
+  </div>
+  <!-- ------------------------------- -->
+</div>

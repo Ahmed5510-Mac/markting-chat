@@ -1,0 +1,80 @@
+
+<!-- <div class="alert m-auto alert-danger z-3 w-50" [class.animi]="invalidRegistration" *ngIf="invalidRegistration">
+  <p>{{errorMessage}}</p>
+</div> -->
+<form class="form-add-customer form-box"  [class.show-form]="Show"[class.Close-form]="!Show"(ngSubmit)="addCustomer()"
+[formGroup]='addCustomerForm' (ngSubmit)="addCustomer()" >
+  <span class="close-btn-customer" (click)="formClose()">
+    <i class="fa fa-close"></i>
+  </span>
+  <h1>Add Customer</h1>
+  <!-- ------------------full-name---------------------- -->
+  <div class="input ">
+    <span class="icon">
+      <i *ngIf="addCustomerForm.get('fullName')?.errors!=null" class="fa fa-user"></i>
+    </span>
+    <input #fullName
+    [class.is-valid]="addCustomerForm.get('fullName')?.errors ==null"
+    type="text" formControlName="fullName" class="w-100 form-control">
+    <label for="" [ngClass]="{'top':addCustomerForm.get('fullName')?.errors==null||fullName.value.length>0}">Full Name</label>
+    <small class="text-danger" *ngIf="addCustomerForm.get('fullName')?.errors!=null &&addCustomerForm.get('fullName')?.touched">
+     <span *ngIf="addCustomerForm.get('fullName')?.errors.required">First Name is Required</span>
+     <span  *ngIf="addCustomerForm.get('fullName')?.errors.pattern"> Enter Valid First Name</span>
+    </small>
+  </div>
+  <!-- ------------------phone number---------------------- -->
+  <div class="input ">
+    <span class="icon">
+      <i *ngIf="addCustomerForm.get('phone')?.errors!=null" class="fa  fa-user"></i>
+    </span>
+    <input #phone
+    [class.is-valid]="addCustomerForm.get('phone')?.errors ==null"
+    type="text" class="phone" formControlName="phone" class="w-100 form-control">
+    <label for="" [ngClass]="{'top':addCustomerForm.get('phone')?.errors==null||phone.value.length>0}">Phone Number</label>
+    <small class="text-danger" *ngIf="addCustomerForm.get('phone')?.errors!=null &&addCustomerForm.get('phone')?.touched">
+      <span *ngIf="addCustomerForm.get('phone')?.errors.required">Phone Number is Required</span>
+      <span  *ngIf="addCustomerForm.get('phone')?.errors.pattern">
+         Enter Valid  egypt Phone Number start with 002 |+2|not and 010|012|015  </span>
+     </small>
+  </div>
+    <!-- ------------------Note ---------------------- -->
+    <div class="inputNotes">
+    <span class="icon">
+      <i *ngIf="addCustomerForm.get('notes')?.errors!=null" class="fa  fa-envelope"></i>
+    </span>
+    <textarea #notes autocomplete="false" 
+    [class.is-valid]="addCustomerForm.get('notes')?.errors ==null"
+    type="notes" formControlName="notes" class="w-100 form-control"></textarea>
+    <label for="" [ngClass]="{'top':addCustomerForm.get('notes')?.errors==null||notes.value.length>0}">notes</label>
+    <small class="text-danger" *ngIf="addCustomerForm.get('notes')?.errors!=null &&addCustomerForm.get('notes')?.touched">
+      <span *ngIf="addCustomerForm.get('notes')?.errors.required">notes  is Required</span>
+      <span  *ngIf="addCustomerForm.get('notes')?.errors.pattern"> Enter Valid notes</span>
+     </small>
+  </div>
+  <!-- ------------------gender---------------------- -->
+  <div class="gender mt-5">
+    <span class="lable">Gender</span>
+    <input id="male" type="radio"  formControlName="gender" value="male">
+    <input id="female" type="radio"  formControlName="gender" value="female">
+    <span class="bull"></span>
+    <label for="male"><img src="../../assets/images/male.webp" alt=""></label>
+    <label for="female"><img src="../../assets/images/Femalwebp.webp" alt=""> </label>
+  </div>
+    <!-- ------------------category---------------------- -->
+    <label for="" class="custom-select category mt-5 ">
+      Select Role
+     <select class="category"  id="category" formControlName="category" required >
+       <option  *ngFor="let cat of categoryList" [id]="cat.name" [value]="cat.code">
+          {{cat.code}}
+       </option>
+     </select>
+   </label>
+<!-- ------------------ buttons ---------------------- -->
+<div class="buttons mt-4 d-flex justify-content-center gap-5">
+  <button [disabled]="addCustomerForm.invalid" type="submit" class="f-btn">Submit</button>
+  <button [disabled]="!addCustomerForm.get('phone')?.touched
+   &&!addCustomerForm.get('fullName')?.touched
+   &&!addCustomerForm.get('Note')?.touched
+  "type="reset" class="f-btn"> Reset</button>
+</div>
+</form>

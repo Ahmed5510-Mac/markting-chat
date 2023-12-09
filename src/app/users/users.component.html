@@ -1,0 +1,66 @@
+<!-- -------------------search----------------- -->
+<div class="mt-1">
+  <div class="flexbox">
+    <div class="search" [class.show]="showSearch">
+      <div>
+        <input #fil  [(ngModel)]="word" type="text" placeholder="Search . . ." required >
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ------------------- table of users ----------------- -->
+<div class="">
+  <table class=" text-center  w-100" (mousemove)="handelMove($event)">
+    <thead>
+      <tr >
+        <th #th  *ngFor="let head of tableHead" data="">{{head}}
+          <span class="sort-arrow" *ngIf="!(head=='Action')">
+            <i  *ngIf="sortDirectionIcon"  class="fa-solid fa-arrow-up-wide-short" (click)="sortingup('up',th)"></i>
+            <i  *ngIf="!sortDirectionIcon"   class="fa-solid fa-arrow-down-short-wide" (click)="sortingup('up',th)"></i>
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr  *ngFor="let user of userList|multiSearchCustom:word :'firstName' :'lastName' :'email' " > -->
+      <tr  *ngFor="let user of userList" >
+        <td (mousemove)="handelMove($event)"[class.text-danger]="!user.isActive">{{user.id}}</td>
+        <td (mousemove)="handelMove($event)"[class.text-danger]="!user.isActive">{{user.firstName}} {{user.lastName}}</td>
+        <td (mousemove)="handelMove($event)"[class.text-danger]="!user.isActive">{{user.email}}</td>
+        <td (mousemove)="handelMove($event)"[class.text-danger]="!user.isActive">{{user.role ===''?'un assign':user.role}}</td>
+        <td class="gender-font"(mousemove)="handelMove($event)" [class.text-danger]="!user.isActive">{{user.gender =='male'?'🧑‍💼':'🧕'}}</td>
+        <td (mousemove)="handelMove($event)"[class.text-danger]="!user.isActive"> {{user.isActive?'Active':"in Active"}}</td>
+        <td (mousemove)="handelMove($event)">
+            <div class="Action">
+              <a class="edit mx-2"(click)="updateUser(user)" >
+                <img src="../../assets/images/user-edite.png" alt="">
+               </a>
+              <span (click)="deleteUser(user.id)">
+                  <span style="overflow:hidden;">
+                      <span class="trash">
+                      <span class="center-trush"></span>
+                      </span><b></b>
+                      <span></span>
+                   </span>
+               </span>
+
+            </div>
+        </td>
+      </tr>
+
+    </tbody>
+    <div class="tools">
+      <!-- <div class="sort">
+        <i class="fa fa-arrow-up" (click)="sortingup('up',th)"></i>
+        <i class="fa fa-arrow-down" (click)="sortingup('down',th)"></i>
+      </div> -->
+    </div>
+  </table>
+</div>
+
+
+<!-- Modal -->
+<div [class.shoeModel]="shoeModel"  class="model">
+  <app-update [show]="shoeModel" ></app-update>
+</div>
+

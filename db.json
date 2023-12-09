@@ -1,0 +1,933 @@
+{
+  "users": [
+    {
+      "firstName": "esssam",
+      "lastName": "Darwish",
+      "email": "essam@gmail.com",
+      "password": "Essam5510++",
+      "gender": "male",
+      "role": "",
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "firstName": "Ahmed",
+      "lastName": "Mohamed",
+      "email": "Ahmed@m.com",
+      "password": "Mac5510++",
+      "gender": "male",
+      "role": "admin",
+      "isActive": true,
+      "id": 4
+    },
+    {
+      "firstName": "DimaA",
+      "lastName": "Mohamed",
+      "email": "dima@m.com",
+      "password": "Dima5510++",
+      "gender": "female",
+      "role": "tech",
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "firstName": "sawsan",
+      "lastName": "alam",
+      "email": "sa@la.com",
+      "password": "Saal5510++",
+      "gender": "female",
+      "role": "quality",
+      "isActive": true,
+      "id": 6
+    },
+    {
+      "firstName": "mana",
+      "lastName": "ahmed",
+      "email": "mana@gmail.com",
+      "password": "Mana5510++",
+      "gender": "male",
+      "role": "user",
+      "isActive": true,
+      "id": 10
+    },
+    {
+      "firstName": "youssef",
+      "lastName": "abohaty",
+      "email": "y@gmail.com",
+      "password": "Ahmed5510@#",
+      "gender": "male",
+      "role": "tech",
+      "isActive": true,
+      "id": 11
+    },
+    {
+      "firstName": "mohamed",
+      "lastName": "gamal",
+      "email": "m@gmial.com",
+      "password": "Mohamed55@#",
+      "gender": "male",
+      "role": "user",
+      "isActive": true,
+      "id": 12
+    }
+  ],
+  "role": [
+    {
+      "code": "admin",
+      "name": "admin"
+    },
+    {
+      "code": "user",
+      "name": "user"
+    },
+    {
+      "code": "stuff",
+      "name": "stuff"
+    },
+    {
+      "code": "tech",
+      "name": "technician"
+    },
+    {
+      "code": "quality",
+      "name": "quality"
+    }
+  ],
+  "roleAccess": [
+    {
+      "role": "admin",
+      "menu": "user",
+      "haveEdit": true,
+      "haveAdd": true,
+      "haveDelete": true
+    },
+    {
+      "role": "admin",
+      "menu": "customer",
+      "haveEdit": true,
+      "haveAdd": true,
+      "haveDelete": true
+    },
+    {
+      "role": "user",
+      "menu": "user",
+      "haveEdit": false,
+      "haveAdd": false,
+      "haveDelete": false
+    },
+    {
+      "role": "admin",
+      "menu": "customer",
+      "haveEdit": true,
+      "haveAdd": true,
+      "haveDelete": false
+    },
+    {
+      "role": "tech",
+      "menu": "customer",
+      "haveEdit": false,
+      "haveAdd": true,
+      "haveDelete": false
+    }
+  ],
+  "customers": [
+    {
+      "Name": "Ahmed Darwidh",
+      "time": "12:58 AM",
+      "leatsMessage": "Hello Ahmed 💝",
+      "imageUrl": "../../assets/images/ahmed darwish.jpg",
+      "leatsMessageRead": false,
+      "phoneNumber": "01011773739",
+      "category": "clothes",
+      "Note": "order",
+      "gender": "male",
+      "messages": [
+        {
+          "id": 1,
+          "body": "Hello Ahmed 💝",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "hi how are you?",
+          "time": "12:59 BM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "i am fine thanks",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "send to my files",
+          "time": "1:01 BM",
+          "my": false
+        },
+        {
+          "id": 1,
+          "body": "Hello Ahmed 💝",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "hi how are you?",
+          "time": "12:59 BM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "i am fine thanks",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "send to my files",
+          "time": "1:01 BM",
+          "my": false
+        },
+        {
+          "id": 1,
+          "body": "Hello Ahmed 💝",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "hi how are you?",
+          "time": "12:59 BM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "i am fine thanks",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "send to myfiles",
+          "time": "1:01 BM",
+          "my": false
+        },
+        {
+          "id": 1,
+          "body": "Hello Ahmed 💝",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "hi how are you?",
+          "time": "12:59 BM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "i am fine thanks",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "send to myfiles",
+          "time": "1:01 BM",
+          "my": false
+        },
+        {
+          "id": 1,
+          "body": "Hello Ahmed 💝",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "hi how are you?",
+          "time": "12:59 BM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "i am fine thanks",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "send to myfiles",
+          "time": "1:01 BM",
+          "my": false
+        }
+      ]
+    },
+    {
+      "Name": "Mohamed gmal",
+      "time": "1:5 AM",
+      "leatsMessage": "ايه الاخبار يامدير ",
+      "imageUrl": "../../assets/images/default-avatar.png",
+      "leatsMessageRead": true,
+      "phoneNumber": "01056947204",
+      "category": "clothes",
+      "Note": "order",
+      "gender": "male",
+      "messages": [
+        {
+          "id": 1,
+          "body": "ايه الاخبار",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "الحمد لله ووانت",
+          "time": "12:59 BM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "بخير الحمد لله شفت نور",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "اليوم بازن الله",
+          "time": "1:01 BM",
+          "my": false
+        }
+      ]
+    },
+    {
+      "Name": "youssef Abohaty",
+      "time": "3:12 AM",
+      "leatsMessage": "ابعب الcv ",
+      "imageUrl": "../../assets/images/youssef.jpg",
+      "leatsMessageRead": false,
+      "phoneNumber": "01184750284",
+      "category": "clothes",
+      "Note": "order",
+      "gender": "male",
+      "messages": [
+        {
+          "id": 1,
+          "body": " احمد عامل ايه",
+          "time": "12:58 BM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "الحمد لله وانت",
+          "time": "12:59 AM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "بخير الحمد لله  ابعت ال سيفى",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": " عيونى حاضر",
+          "time": "1:01 AM",
+          "my": false
+        }
+      ]
+    },
+    {
+      "Name": "Essam Darwish",
+      "time": "7:8 BM",
+      "leatsMessage": "ايه الاخبار يانجم",
+      "imageUrl": "../../assets/images/essam.jpg",
+      "leatsMessageRead": true,
+      "phoneNumber": "01004824068",
+      "category": "clothes",
+      "Note": "tec",
+      "gender": "male",
+      "messages": [
+        {
+          "id": 1,
+          "body": "   السلام عليكم ",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "  وعليكم السلام",
+          "time": "12:59 B AMM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "     عامل ايه ",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "  بخير",
+          "time": "1:01",
+          "my": false
+        }
+      ]
+    },
+    {
+      "Name": " محمد الشحات ",
+      "time": "5:26 AM",
+      "leatsMessage": "فعل البرنامج لنور ",
+      "imageUrl": "../../assets/images/mohamed.jpg",
+      "leatsMessageRead": false,
+      "phoneNumber": "01011773739",
+      "category": "food",
+      "Note": "accessories",
+      "gender": "male",
+      "messages": [
+        {
+          "id": 1,
+          "body": "   السلام عليكم ",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "  وعليكم السلام",
+          "time": "12:59 BM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "     عامل ايه ",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "  بخير",
+          "time": "1:01",
+          "my": false
+        }
+      ]
+    },
+    {
+      "Name": "رضا على",
+      "time": "4:00 BM",
+      "leatsMessage": "عايز اظبط الكاميرات ",
+      "imageUrl": "../../assets/images/reda.jpg",
+      "leatsMessageRead": true,
+      "phoneNumber": "01516773739",
+      "category": "food",
+      "Note": "order",
+      "gender": "male",
+      "messages": [
+        {
+          "id": 1,
+          "body": "   السلام عليكم ",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "  وعليكم السلام",
+          "time": "12:59 BM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "     عامل ايه ",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "  بخير",
+          "time": "1:01",
+          "my": false
+        }
+      ]
+    },
+    {
+      "Name": " الشيخ عبد الكريم",
+      "time": "4:00 BM",
+      "leatsMessage": "  التليفون اخباره ايه ",
+      "imageUrl": "../../assets/images/abdelkarem.jpg",
+      "leatsMessageRead": false,
+      "phoneNumber": "0121443739",
+      "category": "food",
+      "Note": "order",
+      "gender": "male",
+      "messages": [
+        {
+          "id": 1,
+          "body": "   السلام عليكم ",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "  وعليكم السلام",
+          "time": "12:59 BM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "     عامل ايه ",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "  بخير",
+          "time": "1:01",
+          "my": false
+        }
+      ]
+    },
+    {
+      "Name": " Moustafa taha",
+      "time": "4:00 BM",
+      "leatsMessage": "  واحشنى والله ",
+      "imageUrl": "../../assets/images/moustfa taha.jpg",
+      "leatsMessageRead": true,
+      "phoneNumber": "01111773739",
+      "category": "medical",
+      "Note": "order",
+      "gender": "male",
+      "messages": [
+        {
+          "id": 1,
+          "body": "   السلام عليكم ",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "  وعليكم السلام",
+          "time": "12:59 BM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "     عامل ايه ",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "  بخير",
+          "time": "1:01",
+          "my": false
+        }
+      ]
+    },
+    {
+      "Name": "Ahmed Darwidh",
+      "time": "12:58 AM",
+      "leatsMessage": "Hello Ahmed 💝",
+      "imageUrl": "../../assets/images/ahmed darwish.jpg",
+      "leatsMessageRead": false,
+      "category": "food",
+      "Note": "",
+      "gender": "male",
+      "phoneNumber": "01011773739",
+      "messages": [
+        {
+          "id": 1,
+          "body": "Hello Ahmed 💝",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "hi how are you?",
+          "time": "12:59 BM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "i am fine thanks",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "send to myfiles",
+          "time": "1:01 BM",
+          "my": false
+        },
+        {
+          "id": 1,
+          "body": "Hello Ahmed 💝",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "hi how are you?",
+          "time": "12:59 BM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "i am fine thanks",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "send to myfiles",
+          "time": "1:01 BM",
+          "my": false
+        },
+        {
+          "id": 1,
+          "body": "Hello Ahmed 💝",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "hi how are you?",
+          "time": "12:59 BM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "i am fine thanks",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "send to myfiles",
+          "time": "1:01 BM",
+          "my": false
+        },
+        {
+          "id": 1,
+          "body": "Hello Ahmed 💝",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "hi how are you?",
+          "time": "12:59 BM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "i am fine thanks",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "send to myfiles",
+          "time": "1:01 BM",
+          "my": false
+        },
+        {
+          "id": 1,
+          "body": "Hello Ahmed 💝",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "hi how are you?",
+          "time": "12:59 BM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "i am fine thanks",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "send to myfiles",
+          "time": "1:01 BM",
+          "my": false
+        }
+      ]
+    },
+    {
+      "Name": "Mohamed gmal",
+      "time": "1:5 AM",
+      "leatsMessage": "ايه الاخبار يامدير ",
+      "imageUrl": "../../assets/images/default-avatar.png",
+      "leatsMessageRead": true,
+      "phoneNumber": "01089773739",
+      "Note": "order",
+      "gender": "male",
+      "messages": [
+        {
+          "id": 1,
+          "body": "ايه الاخبار",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "الحمد لله ووانت",
+          "time": "12:59 BM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "بخير الحمد لله شفت نور",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "اليوم بازن الله",
+          "time": "1:01 BM",
+          "my": false
+        }
+      ]
+    },
+    {
+      "Name": "youssef Abohaty",
+      "time": "3:12 AM",
+      "leatsMessage": "ابعب الcv ",
+      "imageUrl": "../../assets/images/youssef.jpg",
+      "leatsMessageRead": false,
+      "phoneNumber": "01095373739",
+      "category": "medical",
+      "Note": "",
+      "gender": "male",
+      "messages": [
+        {
+          "id": 1,
+          "body": " احمد عامل ايه",
+          "time": "12:58 BM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "الحمد لله وانت",
+          "time": "12:59 AM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "بخير الحمد لله  ابعت ال سيفى",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": " عيونى حاضر",
+          "time": "1:01 AM",
+          "my": false
+        }
+      ]
+    },
+    {
+      "Name": "Essam Darwish",
+      "time": "7:8 BM",
+      "leatsMessage": "ايه الاخبار يانجم",
+      "imageUrl": "../../assets/images/essam.jpg",
+      "leatsMessageRead": true,
+      "phoneNumber": "01511773739",
+      "category": "medical",
+      "Note": "order",
+      "gender": "male",
+      "messages": [
+        {
+          "id": 1,
+          "body": "   السلام عليكم ",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "  وعليكم السلام",
+          "time": "12:59 B AMM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "     عامل ايه ",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "  بخير",
+          "time": "1:01",
+          "my": false
+        }
+      ]
+    },
+    {
+      "Name": " محمد الشحات ",
+      "time": "5:26 AM",
+      "leatsMessage": "فعل البرنامج لنور ",
+      "imageUrl": "../../assets/images/mohamed.jpg",
+      "leatsMessageRead": false,
+      "phoneNumber": "01011773739",
+      "category": "medical",
+      "Note": "order",
+      "gender": "male",
+      "messages": [
+        {
+          "id": 1,
+          "body": "   السلام عليكم ",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "  وعليكم السلام",
+          "time": "12:59 BM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "     عامل ايه ",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "  بخير",
+          "time": "1:01",
+          "my": false
+        }
+      ]
+    },
+    {
+      "Name": "رضا على",
+      "time": "4:00 BM",
+      "leatsMessage": "عايز اظبط الكاميرات ",
+      "imageUrl": "../../assets/images/reda.jpg",
+      "leatsMessageRead": true,
+      "phoneNumber": "01511324739",
+      "category": "sport",
+      "Note": "",
+      "gender": "male",
+      "messages": [
+        {
+          "id": 1,
+          "body": "   السلام عليكم ",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "  وعليكم السلام",
+          "time": "12:59 BM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "     عامل ايه ",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "  بخير",
+          "time": "1:01",
+          "my": false
+        }
+      ]
+    },
+    {
+      "Name": " الشيخ عبد الكريم",
+      "time": "4:00 BM",
+      "leatsMessage": "  التليفون اخباره ايه ",
+      "imageUrl": "../../assets/images/abdelkarem.jpg",
+      "leatsMessageRead": false,
+      "phoneNumber": "01211773739",
+      "category": "sport",
+      "Note": "order",
+      "gender": "male",
+      "messages": [
+        {
+          "id": 1,
+          "body": "   السلام عليكم ",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "  وعليكم السلام",
+          "time": "12:59 BM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "     عامل ايه ",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "  بخير",
+          "time": "1:01",
+          "my": false
+        }
+      ]
+    },
+    {
+      "Name": " Moustafa taha",
+      "time": "4:00 BM",
+      "leatsMessage": "  واحشنى والله ",
+      "imageUrl": "../../assets/images/moustfa taha.jpg",
+      "leatsMessageRead": true,
+      "phoneNumber": "01529483739",
+      "category": "sport",
+      "Note": "order",
+      "gender": "male",
+      "messages": [
+        {
+          "id": 1,
+          "body": "   السلام عليكم ",
+          "time": "12:58 AM",
+          "my": true
+        },
+        {
+          "id": 2,
+          "body": "  وعليكم السلام",
+          "time": "12:59 BM",
+          "my": false
+        },
+        {
+          "id": 3,
+          "body": "     عامل ايه ",
+          "time": "1:00 AM",
+          "my": true
+        },
+        {
+          "id": 3,
+          "body": "  بخير",
+          "time": "1:01",
+          "my": false
+        }
+      ]
+    }
+  ],
+  "catigory": [
+    {
+      "code": "food",
+      "name": "food"
+    },
+    {
+      "code": "clothes",
+      "name": "clothes"
+    },
+    {
+      "code": "medical",
+      "name": "medical"
+    }
+  ],
+  "Notes": []
+}

@@ -1,0 +1,96 @@
+
+<div class="alert m-auto alert-danger z-3 w-50" [class.animi]="invalidRegistration" *ngIf="invalidRegistration">
+  <p>{{errorMessage}}</p>
+</div>
+<form class=" form-box" [class.show-form]="fShow"[class.Close-form]="fClose" [formGroup]='registrationForm' (ngSubmit)="registerForm()" >
+  <span class="close-btn" (click)="formClose()">
+    <i class="fa fa-close"></i>
+  </span>
+  <h1>Registration</h1>
+  <!-- ------------------first-name---------------------- -->
+  <div class="input firestname">
+    <span class="icon">
+      <i *ngIf="registrationForm.get('firstName')?.errors!=null" class="fa fa-user"></i>
+    </span>
+    <input #fName
+    [class.is-valid]="registrationForm.get('firstName')?.errors ==null"
+    type="text" formControlName="firstName" class="w-100 form-control">
+    <label for="" [ngClass]="{'top':registrationForm.get('firstName')?.errors==null||fName.value.length>0}">First Name</label>
+    <small class="text-danger" *ngIf="registrationForm.get('firstName')?.errors!=null &&registrationForm.get('firstName')?.touched">
+     <span *ngIf="registrationForm.get('firstName')?.errors.required">First Name is Required</span>
+     <span  *ngIf="registrationForm.get('firstName')?.errors.pattern"> Enter Valid First Name</span>
+    </small>
+  </div>
+  <!-- ------------------lastName---------------------- -->
+  <div class="input lastName">
+    <span class="icon">
+      <i  *ngIf="registrationForm.get('lastName')?.errors!=null" class="fa  fa-user"></i>
+    </span>
+    <input #lName
+    [class.is-valid]="registrationForm.get('lastName')?.errors ==null"
+    type="text" formControlName="lastName" class="w-100 form-control">
+    <label for="" [ngClass]="{'top':registrationForm.get('lastName')?.errors==null||lName.value.length>0}">Last Name</label>
+    <small class="text-danger" *ngIf="registrationForm.get('lastName')?.errors!=null &&registrationForm.get('lastName')?.touched">
+      <span *ngIf="registrationForm.get('lastName')?.errors.required">Last Name is Required</span>
+      <span  *ngIf="registrationForm.get('lastName')?.errors.pattern"> Enter Valid Last</span>
+     </small>
+  </div>
+  <!-- ------------------email---------------------- -->
+  <div class="input email">
+    <span class="icon">
+      <i *ngIf="registrationForm.get('email')?.errors!=null" class="fa  fa-envelope"></i>
+    </span>
+    <input #email autocomplete="false" required
+    [class.is-valid]="registrationForm.get('email')?.errors ==null"
+    type="email" formControlName="email" class="w-100 form-control">
+    <label for="" [ngClass]="{'top':registrationForm.get('email')?.errors==null||email.value.length>0}">Email</label>
+    <small class="text-danger" *ngIf="registrationForm.get('email')?.errors!=null &&registrationForm.get('email')?.touched">
+      <span *ngIf="registrationForm.get('email')?.errors.required">Email  is Required</span>
+      <span  *ngIf="registrationForm.get('email')?.errors.pattern"> Enter Valid Email</span>
+     </small>
+  </div>
+
+  <!-- ------------------password---------------------- -->
+  <div class="input password">
+    <span *ngIf="t1.value.length==0" class="icon iconpass"><i class="fa fa-lock"></i></span>
+    <input #t1 (keydown)="checkPassword(t1.value,t1)" autocomplete="false"
+    [class.is-valid]="registrationForm.get('password')?.errors ==null"
+    [type]="!showPass?'password':'text'"formControlName="password" class="w-100">
+    <label for="" [ngClass]="{'top':registrationForm.get('password')?.errors==null||t1.value.length>0}">password</label>
+    <div class="eye-icon" *ngIf="t1.value.length>0">
+      <i class="fa fa-eye" *ngIf="showPass" (click)=" showPassword(t1)"></i>
+      <i class="fa fa-eye-slash" *ngIf="!showPass"  (click)=" showPassword(t1)"></i>
+    </div>
+    <div *ngIf="t1.value.length>1"  class="indecator">
+      <span class="weak"></span>
+      <span class="medium"></span>
+      <span class="strong"></span>
+    </div>
+    <div *ngIf="t1.value.length>1" class="text">your password is  <span class="pass-length" [style.color]="passLengthColor">{{passLength|uppercase}}</span></div>
+    <small class="text-danger " *ngIf="!errorPass &&registrationForm.get('password')?.touched">
+      <span *ngIf="registrationForm.get('password')?.errors.required">Password is Required</span>
+      <span *ngIf="registrationForm.get('password')?.errors.pattern&&!errorPass">Password Must  Start with Capital liter</span>
+     </small>
+
+  </div>
+  <!-- ------------------gender---------------------- -->
+  <div class="gender">
+    <span class="lable">Gender</span>
+    <input id="male" type="radio"  formControlName="gender" value="male">
+    <input id="female" type="radio"  formControlName="gender" value="female">
+    <span class="bull"></span>
+    <label for="male"><img src="../../assets/images/male.webp" alt=""></label>
+    <label for="female"><img src="../../assets/images/Femalwebp.webp" alt=""> </label>
+  </div>
+  <!-- ------------------gender---------------------- -->
+  <div class="buttons d-flex justify-content-center gap-5 ">
+    <button [disabled]="registrationForm.invalid" type="submit"
+     class="f-btn "> submit</button>
+    <button [disabled]="!registrationForm.get('password')?.touched
+     &&!registrationForm.get('email')?.touched
+     &&!registrationForm.get('lastName')?.touched
+     &&!registrationForm.get('firstName')?.touched
+    " type="reset" class="f-btn "> Reset</button>
+  </div>
+  <p class="text-center footer"> You Have Already Acount <a class="golink " (click)="goSignin() ">sing in</a> </p>
+</form>

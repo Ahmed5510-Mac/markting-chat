@@ -1,0 +1,144 @@
+@import '@sweetalert2/theme-dark/dark.scss';
+*{
+  box-shadow: none;
+}
+:root {
+  --sz: 10vmin;
+  --on: #99dc39;
+  --of: #F44336;
+  --lg: var(--of);
+  --sp: 1s;
+}
+form{
+  height: auto;
+  // box-shadow:   0 0 12px 0px #a5a5a5;
+  overflow: visible;
+  background: #0507317a;
+  backdrop-filter: blur(20px);
+}
+.form-box::before {
+  width: 76PX !important;
+  height: 69px !important;
+  border-bottom-right-radius:10px;
+transform: rotate(0deg);
+  top: -3px;
+left: 0;
+
+}
+.form-box::after {
+  bottom: 30px;
+  right: -12px;
+  z-index: 4;
+  height: 2px;
+  transform: rotate(318deg);
+  width: 92px;
+}
+.close-btn{
+top: 22px;
+left: 29px;
+}
+.close-btn:hover{
+top: 30px;
+  left: 37px;
+}
+.role{
+  margin-bottom: 20px;
+}
+.swal2-popup.swal2-toast.swal2-show
+{
+background-color: #032b4b82;
+box-shadow:   0 0 12px 0px #a5a5a5;
+border-radius: 20px;
+color: #fff;
+backdrop-filter: blur(10px);
+}
+.gender{
+  margin: 0;
+  border-bottom: 2px solid #3d537b;
+  padding-bottom:2px;
+  margin-bottom: 10px !important;
+  & label:not(:last-of-type){
+    margin-bottom:0;
+  }
+   input{
+    visibility: hidden;
+   }
+}
+
+.isActive-container {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.switch-holder {
+  display: flex;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: -8px -8px 15px rgb(7 18 26), 10px 10px 10px rgb(0 0 0), inset 8px 8px 15px rgb(32 57 113 / 70%), inset 10px 10px 10px rgb(79 74 74 / 43%);
+}
+
+.switch-label {
+  width: 150px;
+
+}
+
+.switch-label i {
+  margin-right: 5px;
+  img{
+    width: 25px;
+  }
+}
+
+.switch-toggle {
+  height: 40px;
+}
+
+.switch-toggle input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -2;
+}
+
+.switch-toggle input[type="checkbox"] + label {
+  position: relative;
+  display: inline-block;
+  width: 122px;
+  height: 40px;
+  border-radius: 20px;
+  margin: 0;
+  cursor: pointer;
+  box-shadow: inset -8px -8px 15px rgb(0 3 6), inset 10px 10px 10px rgb(0 0 0 / 65%);
+}
+
+.switch-toggle input[type="checkbox"] + label::before {
+  position: absolute;
+  content: 'inActive';
+  font-size: 13px;
+  text-align: center;
+  line-height: 25px;
+  top: 8px;
+  left: 8px;
+  width: 55px;
+  height: 25px;
+  border-radius: 20px;
+  box-shadow: -3px -3px 5px rgb(8 8 34 / 50%), 3px 3px 5px rgba(0, 0, 0, 0.25);
+  transition: 0.3s ease-in-out;
+  animation: grow ease 0s 2 alternate;
+  background: linear-gradient(3deg, #e12012 , #f98137 );
+color: #fff;
+
+}
+
+.switch-toggle input[type="checkbox"]:checked + label::before {
+  left: 50%;
+  content: "Active";
+  color: #fff;
+  background: #00b33c;
+background: linear-gradient(0deg, #00b33c, #00b33caf 35% 65%, #c0d6ce);
+
+  box-shadow: -3px -3px 5px rgb(65 66 78 / 50%), 3px 3px 5px #00b33c5c;
+}
+

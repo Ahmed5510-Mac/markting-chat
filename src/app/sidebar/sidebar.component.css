@@ -1,0 +1,219 @@
+.sidebar {
+  width: 100%;
+  height: 100%;
+  border-right: 1px solid #2e3a42;
+  box-shadow: 0 0 3px #14191d;
+  background: #111b21;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .sidebar-header {
+  flex-basis: 60px;
+  background-color: #202c33;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-inline: 20px;
+}
+
+.sidebar .sidebar-header .avatar-container {
+  flex-basis: 50px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sidebar .sidebar-header .avatar-container img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.sidebar .sidebar-header .action-container {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 10px;
+}
+
+.sidebar .sidebar-header .action-container a {
+  cursor: pointer;
+}
+
+.sidebar .sidebar-header .action-container a img {
+  width: 35px;
+}
+
+.sidebar .sidebar-header .action-container .newMessage {
+  width: 30px;
+  overflow: hidden;
+}
+
+.sidebar .sidebar-header .action-container .newMessage img {
+  width: 30px;
+}
+
+.sidebar .sidebar-search {
+  flex-basis: 50px;
+  border-bottom: 1px solid #202b32;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-inline: 5px;
+  padding-block: 10px;
+  max-height: 50px;
+}
+
+.sidebar .sidebar-search .sidebar-search-input {
+  background: #202c33;
+  width: 90%;
+  padding-inline: 5px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-height: 30px;
+  margin: 0;
+}
+
+.sidebar .sidebar-search .sidebar-search-input i {
+  transition: all 0.3s;
+}
+
+.sidebar .sidebar-search .sidebar-search-input .icons {
+  transform: rotate(90deg);
+}
+
+.sidebar .sidebar-search .sidebar-search-input .icons .none {
+  display: none !important;
+}
+
+.sidebar .sidebar-search .sidebar-search-input .icons .serchiconVisable1 {
+  display: block !important;
+}
+
+.sidebar .sidebar-search .sidebar-search-input input {
+  width: 85%;
+  background: none;
+  outline: none;
+  border: none;
+  caret-color: #617177;
+}
+
+.sidebar .sidebar-search .sidebar-search-input input::placeholder {
+  color: #7c8e94;
+  font-size: 14px;
+}
+
+.sidebar .sidebar-search .sidebar-search-input input .filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar .sidebar-content {
+  overflow-y: scroll;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+
+.sidebar .sidebar-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar .sidebar-content::-webkit-scrollbar-thumb {
+  background: #374045;
+}
+
+.sidebar .sidebar-content::-webkit-scrollbar-thumb:hover {
+  background: #455056;
+}
+
+.sidebar .sidebar-content .Noconversition {
+  padding-block: 20px;
+  text-align: center;
+  color: #84949d;
+}
+
+.sidebar .sidebar-content .conversation {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+  transition: all 0.4s ease-in-out;
+}
+
+.sidebar .sidebar-content .conversation:hover {
+  background-color: #202c33;
+  cursor: pointer;
+}
+
+.sidebar .sidebar-content .conversation .pictuer {
+  flex-basis: 80px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar .sidebar-content .conversation .pictuer img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.sidebar .sidebar-content .conversation .content {
+  height: 100%;
+  flex: 1;
+  border-bottom: 1px solid #202b32;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sidebar .sidebar-content .conversation .content .conversiation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar .sidebar-content .conversation .content .conversiation-header .name {
+  color: #fff;
+}
+
+.sidebar .sidebar-content .conversation .content .conversiation-header .time {
+  color: #8696a0;
+}
+
+.sidebar .sidebar-content .conversation .content .message {
+  color: #8696a0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar .sidebar-content .conversation .content .message .doublecheck {
+  display: inline-block;
+  border: 1px solid red;
+  width: 20px;
+  height: 20px;
+}
+
+.sidebar .sidebar-content .conversation .content .message .arrow-menu {
+  transform: translateX(10px);
+  visibility: hidden;
+  transition: 0.2s ease-out;
+}
+
+.sidebar .sidebar-content .conversation .content:hover.content .arrow-menu {
+  transform: translateX(0px);
+  visibility: visible;
+}

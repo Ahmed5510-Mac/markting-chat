@@ -1,0 +1,209 @@
+.sidebar{
+  width: 100%;
+  height: 100%;
+  border-right: 1px solid #2e3a42;
+  box-shadow: 0 0 3px #14191d ;
+  background: #111b21;
+  display: flex;
+  flex-direction: column;
+  // ------------------------------------
+  .sidebar-header{
+    flex-basis: 60px;
+    background-color: #202c33;
+    // border: 1px solid red;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-inline:20px ;
+    // -----------------------------------
+    .avatar-container{
+      flex-basis: 50px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // border: 1px solid red;
+      cursor: pointer;
+      img{
+        width: 40px;
+        height: 40px ;
+        border-radius: 50%;
+      }
+    }
+    .action-container{
+      // border: 1px solid green;
+      flex-grow: 1;
+      height:100%;
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      gap: 10px;
+      // -------------
+       a{
+        cursor: pointer;
+        img{
+          width: 35px;
+        }
+      }
+      // ----------
+      .newMessage{
+        // border: 1px solid red;
+        width: 30px;
+        overflow: hidden;
+        img{
+          width: 30px
+        }
+      }
+    }
+  }
+  .sidebar-search{
+    flex-basis :50px;
+    border-bottom: 1px solid #202b32;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-inline: 5px;
+    padding-block: 10px;
+    max-height: 50px;
+    // ---------------------
+    .sidebar-search-input{
+      background: #202c33;
+      width: 90%;
+      padding-inline: 5px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-height:30px;
+      margin: 0;
+      // -----------------------------
+      i{
+      transition: all 0.3s;
+      }
+      .icons{
+
+          transform: rotate(90deg);
+
+        .none{
+          display: none !important;
+        }
+        .serchiconVisable1{
+          display: block !important;
+        }
+      }
+      // -----------------------------
+      input{
+        width: 85%;
+        background: none;
+        outline: none;
+        border: none;
+        caret-color: #617177;
+        &::placeholder{
+          color:#7c8e94;
+          font-size: 14px;
+        }
+        .filter{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+  .sidebar-content{
+    overflow-y: scroll;
+    /* width */
+&::-webkit-scrollbar {
+  width: 5px;
+
+}
+/* Track */
+&::-webkit-scrollbar-track {
+
+}
+/* Handle */
+&::-webkit-scrollbar-thumb {
+  background: #374045;
+}
+
+/* Handle on hover */
+&::-webkit-scrollbar-thumb:hover {
+  background: #455056;
+}
+    .Noconversition{
+      padding-block: 20px;
+      text-align: center;
+      color: #84949d;
+    }
+    .conversation{
+      width: 100%;
+      height:70px ;
+      display: flex;
+      align-items: center;
+      padding-right: 10px;
+      transition: all 0.4s ease-in-out;
+      &:hover{
+        background-color: #202c33;
+        cursor: pointer;
+      }
+      .pictuer{
+        flex-basis:80px;
+        height:100% ;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img{
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+        }
+
+      }
+      .content{
+        height:100% ;
+        flex:1;
+        border-bottom: 1px solid #202b32;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .conversiation-header{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .name{
+            color:#fff
+          }
+          .time{
+            color: #8696a0;
+          }
+
+        }
+        .message{
+            color: #8696a0;
+            display: flex;
+            justify-content: space-between;
+            .doublecheck{
+              display: inline-block;
+              border: 1px solid red;
+              width: 20px;
+              height: 20px;
+            }
+            .arrow-menu{
+              transform: translateX(10px);
+              visibility: hidden;
+              transition: 0.2s ease-out;
+            }
+
+         }
+          &:hover.content .arrow-menu{
+              transform: translateX(0px);
+              visibility: visible;
+            }
+
+      }
+
+    }
+  }
+}

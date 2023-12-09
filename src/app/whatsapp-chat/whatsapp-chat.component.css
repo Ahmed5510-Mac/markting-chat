@@ -1,0 +1,11 @@
+.chat-container {
+  position: fixed;
+  width: 85%;
+  height: 90%;
+  margin: auto;
+  left: 50%;
+  top: 53%;
+  transform: translate(-50%, -50%);
+  background-color: #222e35;
+  border-radius: 2px;
+}

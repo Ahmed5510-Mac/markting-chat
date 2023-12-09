@@ -1,0 +1,98 @@
+
+<!-- <div class="alert m-auto alert-danger" [class.animi]="invalidRegistration" *ngIf="invalidupdate">
+  <p>{{'errorMessage'}}</p>
+</div> -->
+<div class="update"></div>
+  <form class=" form-box" [class.show-form]="show"[class.Close-form]="!show" [formGroup]='updateForm' (ngSubmit)="updateUser()" >
+    <span class="close-btn" (click)="formClose()">
+      <i class="fa fa-close"></i>
+    </span>
+    <h1>User Update</h1>
+    <!-- ------------------first-name---------------------- -->
+    <div class="input firestname">
+      <span class="icon">
+        <i *ngIf="updateForm.get('firstName')?.errors!=null" class="fa fa-user"></i>
+      </span>
+      <input #fName
+      [class.is-valid]="updateForm.get('firstName')?.errors ==null"
+      type="text" formControlName="firstName" class="w-100 form-control">
+      <label for="" [ngClass]="{'top':updateForm.get('firstName')?.errors==null||fName.value.length>0}">First Name</label>
+      <small class="text-danger" *ngIf="updateForm.get('firstName')?.errors!=null &&updateForm.get('firstName')?.touched">
+       <span *ngIf="updateForm.get('firstName')?.errors.required">First Name is Required</span>
+       <span  *ngIf="updateForm.get('firstName')?.errors.pattern"> Enter Valid First Name</span>
+      </small>
+    </div>
+    <!-- ------------------last-name---------------------- -->
+    <div class="input last-name">
+      <span class="icon">
+        <i *ngIf="updateForm.get('lastName')?.errors!=null" class="fa  fa-user"></i>
+      </span>
+      <input #lName
+      [class.is-valid]="updateForm.get('lastName')?.errors ==null"
+      type="text" formControlName="lastName" class="w-100 form-control">
+      <label for="" [ngClass]="{'top':updateForm.get('lastName')?.errors==null||lName.value.length>0}">Last Name</label>
+      <small class="text-danger" *ngIf="updateForm.get('lastName')?.errors!=null &&updateForm.get('lastName')?.touched">
+        <span *ngIf="updateForm.get('last-name')?.errors.required">Last Name is Required</span>
+        <span  *ngIf="updateForm.get('last-name')?.errors.pattern"> Enter Valid Last</span>
+       </small>
+    </div>
+    <!-- ------------------email---------------------- -->
+    <div class="input email">
+      <span class="icon">
+        <i *ngIf="updateForm.get('email')?.errors!=null" class="fa  fa-envelope"></i>
+      </span>
+      <input #email autocomplete="false" required
+      [class.is-valid]="updateForm.get('email')?.errors ==null"
+      type="email" formControlName="email" class="w-100 form-control">
+      <label for="" [ngClass]="{'top':updateForm.get('email')?.errors==null||email.value.length>0}">Email</label>
+      <small class="text-danger" *ngIf="updateForm.get('email')?.errors!=null &&updateForm.get('email')?.touched">
+        <span *ngIf="updateForm.get('email')?.errors.required">Email  is Required</span>
+        <span  *ngIf="updateForm.get('email')?.errors.pattern"> Enter Valid Email</span>
+       </small>
+    </div>
+    <!-- ------------------gender---------------------- -->
+  <div class="gender">
+    <span class="lable">Gender</span>
+    <input id="male" type="radio" formControlName="gender" value="male">
+    <input id="female" type="radio" formControlName="gender"  value="female">
+    <span class="bull"></span>
+    <label for="male"><img src="../../assets/images/male.webp" alt=""></label>
+    <label for="female"><img src="../../assets/images/Femalwebp.webp" alt=""> </label>
+  </div>
+    <!-- ------------------role---------------------- -->
+    <label for="" class="custom-select">
+       Select Role
+      <select class="role"  id="role" formControlName="role" required >
+        <option  *ngFor="let role of roleList" [id]="role.name" [value]="role.code">
+           {{role.code}}
+        </option>
+      </select>
+    </label>
+
+    <!-- ------------------is Active---------------------- -->
+
+    <div class="isActive-container">
+      <div class="switch-holder d-flex align-items-center">
+        <div class="switch-label">
+            <i class="">
+              <img src="../../assets/images/administrator.png" alt="">
+            </i><span>Active user</span>
+        </div>
+        <div class="switch-toggle">
+          <input type="checkbox" formControlName="isActive" id="isActive">
+              <label for="isActive"></label>
+            </div>
+      </div>
+  </div>
+
+    <!-- ------------------ buttons ---------------------- -->
+    <div class="buttons d-flex justify-content-center gap-5">
+      <button [disabled]="updateForm.invalid" type="submit" class="f-btn"> Update</button>
+      <button [disabled]="!updateForm.get('password')?.touched
+       &&!updateForm.get('email')?.touched
+       &&!updateForm.get('last-name')?.touched
+       &&!updateForm.get('firstName')?.touched
+      "type="reset" class="f-btn"> Reset</button>
+    </div>
+  </form>
+

@@ -1,0 +1,228 @@
+// =========================================
+
+@mixin  messageTip{
+         content:"";
+         position: absolute;
+         width: 20px;
+         height: 20px;
+         top:10px;
+ }
+// =========================================
+
+.container{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  padding: 0;
+
+  .header{
+    flex-basis:60px ;
+    width:100%;
+    margin: 0;
+
+    .header-content{
+      height: 100%;
+      min-height: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .acount-info{
+        width:fit-content ;
+        height:100%;
+        display: flex;
+        align-items: center;
+        gap:20px;
+        padding-inline: 15px;
+
+        .chat-user-avatar{
+          img{
+              width:40px;
+              height:40px;
+              border-radius:50%;
+              cursor: pointer;
+          }
+        }
+        .chat-user-name{
+          cursor: pointer;
+        }
+      }
+      .header-acount-action{
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-inline:15px
+      }
+    }
+  }
+  .body{
+    flex-basis:calc(100% - 120px);
+    min-height:calc(100% - 120px);
+    background:#0c1317;
+    position: relative;
+
+
+    .back{
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+    background: url(../../assets/images/whatsappChat.png);
+    background-repeat: repeat;
+    background-blend-mode: screen;
+     opacity: 0.05;
+
+  }
+  .messages{
+    position: absolute;
+    z-index:5;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 50px;
+    align-items:self-start;
+    overflow-Y:auto;
+
+       /* width */
+&::-webkit-scrollbar {
+  width: 5px;
+
+}
+/* Track */
+&::-webkit-scrollbar-track {
+
+}
+/* Handle */
+&::-webkit-scrollbar-thumb {
+  background: #374045;
+}
+
+/* Handle on hover */
+&::-webkit-scrollbar-thumb:hover {
+  background: #455056;
+}
+    .message{
+      margin-top: 10px;
+      padding:10px;
+      border-radius: 5px;
+      flex-direction:column;
+      position: relative;
+      color:#fff;
+      &:not(.me)::before{
+        left: 0;
+        background: linear-gradient(225deg,#202c33 0%,#202c33 50%,transparent 50%,transparent );
+        @include messageTip
+      }
+      .message-content{
+        background-color: #202c33;
+        padding:10px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        .time{
+          font-size: 10px;
+          align-self: flex-end;
+          font-weight: normal;
+          color: #99beb7;
+          gap: 5px;
+        }
+      }
+       &.me{
+        align-self: flex-end;
+        .message-content{
+          background-color: #005c4b;
+          color:#c5d6d5;
+          &::before{
+            right: 0;
+            background: linear-gradient(135deg,#005c4b 0%,#005c4b 50%,transparent 50%,transparent );
+            @include messageTip
+      }
+        }
+      }
+    }
+  }
+  }
+  .footer{
+    flex-basis: 60px;
+    background-color: #202c33;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    .imojey{
+      flex-basis: 50px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-inline: 10px;
+      height: 100%;
+      height: 45px;
+      img:first-child{
+        width:50px;
+        cursor: pointer;
+      }
+      img:last-child{
+        width:25px;
+        cursor: pointer;
+      }
+      emoji-mart{
+        position: absolute;
+        bottom: 70px;
+        left: 10px;
+        z-index: 12;
+      }
+     }
+     .text-message{
+      flex:1;
+      display: flex;
+      align-items: center;
+       textarea{
+         width: 100%;
+         height: 45px;
+         background-color: #2a3942;
+         border: none;
+         outline: none;
+         border-radius: 4px;
+         resize: none;
+         padding: 10px 20px;
+         color: #fff;
+         &::placeholder{
+          color: #7a8a97;
+         }
+         &::-webkit-scrollbar {
+          width: 0;
+        }
+        /* Track */
+        &::-webkit-scrollbar-track {
+        }
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background: #374045;
+        }
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+          background: #455056;
+        }
+        }
+     }
+     .mic{
+      flex-basis: 50px;
+      img{
+        width: 30px;
+      }
+     }
+  }
+}
+.file
+{
+  background: none;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+  border: 1px solid red;
+}
